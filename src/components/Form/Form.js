@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { addContact } from "../../redux/contacts/contactsOperations";
-import { useDispatch } from "react-redux";
+import { getContactsFromState } from "../../redux/contacts/contactsSelectors";
+import { useDispatch, useSelector } from "react-redux";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -14,6 +15,7 @@ export default function Form() {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
+  const contacts = useSelector(getContactsFromState);
 
   const handleChange = (e) => {
     const { name, value } = e.currentTarget;
@@ -33,6 +35,10 @@ export default function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (contacts.some(contact => contact.name === name)) {
+      alert(`${name} is already in contacts`);
+      return;
+    }
     dispatch(addContact({ name, number }));
     setNumber("");
     setName("");
