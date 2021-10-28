@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6191b6cd-1119-497a-89b8-8758b5ba4da4/deploy-status)](https://app.netlify.com/sites/nervous-swirles-c0ee9a/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6191b6cd-1119-497a-89b8-8758b5ba4da4/deploy-status)](https://app.netlify.com/sites/dmytro78-goit-react-hw-08-phonebook/deploys)
 
 # Getting Started with Create React App
 
